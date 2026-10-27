@@ -14,15 +14,19 @@ No runtime dependencies, no API calls, no secret target access for selectors. Pr
 Completed-run controls; identical rules; extreme noise/price; mobile canvas sizing; target leakage or query-dependent data generation.
 
 ### Task 1 — Scientific engine
-- [ ] Write and run failing tests for learned records, phase order, cost accounting, reproducibility, control conditions and query budgets.
-- [ ] Implement core.js: trainRecords, Agent(prior-only query choice and observed-feedback update), Experiment.step/report, run.
-- [ ] Run node --test tests/*.test.cjs. Verify no target-dependent pre-feedback choices.
+- [x] Write and run failing tests for learned records, phase order, cost accounting, reproducibility, control conditions and query budgets.
+- [x] Implement core.js: trainRecords, Agent(prior-only query choice and observed-feedback update), Experiment.step/report, run.
+- [x] Run node --test tests/*.test.cjs. Verify no target-dependent pre-feedback choices.
 
 ### Task 2 — Browser instrument
-- [ ] Implement index.html, style.css, app.js with responsive instrument, controls, chart, ranking, explanations and export.
-- [ ] Run browser checks for play/pause/reset/finish/export, presets, mobile overflow and console errors.
+- [x] Implement index.html, style.css, app.js with responsive instrument, controls, chart, ranking, explanations and export.
+- [x] Check published browser play/pause/reset/finish/export and identical preset. Inspect desktop layout; mobile resizing remains unverified in this browser environment.
 
 ### Task 3 — Evidence and delivery
-- [ ] Fix benchmark protocol before first run; implement bench.cjs, save all 20 seeds for five presets.
-- [ ] Report outcomes faithfully in README and RESULTS; add Node test job before deployment.
-- [ ] Fresh review, resolve important findings, run final tests and publish fast-forward to main. Verify Pages deployment.
+- [x] Fix benchmark protocol before first run; implement bench.cjs, save all 20 seeds for five presets.
+- [x] Report outcomes faithfully in README and RESULTS; add Node test job before deployment.
+- [x] Fresh review, resolve important findings, run final tests and publish fast-forward to main. Verify Pages deployment.
+
+## Verification record
+
+2026-10-27: all nine engine tests passed locally and in the Pages workflow. Fresh read-only review found no material issues. Published browser checks completed a 600-round directional run and identical-control run, verified zero identical-control queries, and exercised run, pause, reset, step, finish and JSON download. Desktop layout visually inspected. Local automated Chromium installation was unavailable; mobile viewport and offline browser execution were not exercised. The page has no network dependency and includes responsive CSS, but those two modes need separate device checks.
